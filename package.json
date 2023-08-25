@@ -1,0 +1,39 @@
+{
+  "name": "hiberus-technical-test",
+  "version": "1.0.0",
+  "description": "This is a technical for hiberus",
+  "scripts": {
+    "clean": "rimraf allure-results && rimraf allure-report && rimraf test-results && rimraf playwright-report && rimraf junit-results",
+    "play-report": "npx playwright show-report",
+    "allure-report": "allure generate ./allure-results --clean",
+    "open-report": "npm run allure-report && allure open ./allure-report",
+    "chromium": "npx playwright test --project=chromium",
+    "webkit": "npx playwright test --project=webkit",
+    "test": "npm run clean && npx playwright test --project=chromium",
+    "test-head": "npm run clean && npx playwright test --headed",
+    "reinstall": "npx playwright install",
+    "install-deps": "npx playwright install-deps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebotello/hiberus-test-playwright.git"
+  },
+  "keywords": [
+    "playwright",
+    "web test automation"
+  ],
+  "author": "Eilyn Botello <botelloeilyn@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.36.1",
+    "allure-commandline": "^2.23.0",
+    "allure-playwright": "^2.4.0",
+    "playwright": "^1.36.1",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "openai": "^4.2.0",
+    "rimraf": "^5.0.1"
+  }
+}
