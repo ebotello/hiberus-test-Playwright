@@ -12,7 +12,9 @@
     "test": "npm run clean && npx playwright test --project=chromium",
     "test-head": "npm run clean && npx playwright test --headed",
     "reinstall": "npx playwright install",
-    "install-deps": "npx playwright install-deps"
+    "install-deps": "npx playwright install-deps",
+    "pet-api": "npm run clean && npx playwright test tests/api.pet-store.spec.ts --project=chromium",
+    "tests": "npm run pet-api && npm run test-head"
   },
   "repository": {
     "type": "git",
